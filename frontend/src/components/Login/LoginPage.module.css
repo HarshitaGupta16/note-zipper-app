@@ -1,0 +1,89 @@
+.main{
+    background: url('../../assests/background.jpg');
+    background-size: cover;
+    min-height: 96vh;
+    background-position-y: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.intro-text {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.heading {
+    font-size: 85px !important;
+}
+
+.tagline{
+    font-size: 25px !important;
+    padding-top: 10px;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+
+.loginBtn {
+    width: 200px;
+    padding: 5px !important;
+    background-color: #158cba;
+    text-transform: none !important;
+    font-size: large !important;
+}
+
+.loginBtn:hover {
+    background-color: #F3EC77 !important;
+    color: black;
+    border: 1px solid #158cba;
+    box-shadow: 0 4px 2px -2px #158cba !important;
+}
+
+.signUpBtn {
+    width: 200px;
+    padding: 5px !important;
+    text-transform: none !important;
+    font-size: large !important;
+}
+
+.signUpBtn:hover {
+        background-color: #F3EC77 !important;
+    color: black;
+    border: 1px solid #158cba;
+    box-shadow: 0 4px 2px -2px #158cba !important;
+}
+
+@media only screen and (min-width: 1200px){
+    .buttonContainer{
+        padding: 0 200px;
+        margin-top: 50px;
+    }
+    .heading {
+        padding: 0 100px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .main{
+        background-position: center;
+    }
+    .loginBtn{
+        width: 150px;
+        height: 50px;
+    }
+    .signUpBtn{
+        width: 150px;
+        height: 50px;
+    }
+    .heading {
+        font-size: 50px !important;
+        padding: 0px;
+    }
+    .buttonContainer{
+        padding: 10px;
+    }
+}

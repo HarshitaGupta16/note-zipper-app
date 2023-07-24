@@ -1,11 +1,13 @@
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import LoginPage from "./components/Login/LoginPage";
 
 const App = () => (
     <>
     <Header />
-    <main style={{minHeight: "96vh"}}>
+    <main>
+        <LoginPage />
     </main>
     <Footer />
     </>
