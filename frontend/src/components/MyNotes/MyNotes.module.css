@@ -1,0 +1,13 @@
+.badge span {
+  display: flex !important;
+  position: relative;
+  margin-left: -56px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .createNewNoteBtn {
+    padding: 4px 22px;
+  }
+}

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import {
-  AppBar,
   Box,
   Typography,
   Button,
@@ -12,6 +11,7 @@ import {
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -70,77 +70,76 @@ const Header = (props) => {
   };
 
   return (
-    <Box>
-      <AppBar
-        component="nav"
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          padding: "10px 20px",
-          backgroundColor: "#158cba",
-        }}
-      >
-        <Typography variant="h6" component="div">
-          Simply Notes
-        </Typography>
-        <Box>
-          <Search sx={{ display: { xs: "none", sm: "block" } }}>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-        </Box>
-        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        padding: "10px 20px",
+        backgroundColor: "#158cba",
+      }}
+    >
+      <Typography variant="h6" component="div" sx={{ color: "white" }}>
+        Simply Notes
+      </Typography>
+      <Box>
+        <Search sx={{ display: { xs: "none", sm: "block" } }}>
+          <SearchIconWrapper>
+            <SearchIcon />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+      </Box>
+      <Box sx={{ display: { xs: "none", sm: "block" } }}>
+        <Link to="/mynotes">
           <Button sx={{ color: "#fff", textTransform: "none", marginRight: 5 }}>
             My Notes
           </Button>
+        </Link>
 
-          <Tooltip title="View Options" arrow>
-            <Box
-              onClick={handleOpenUserMenu}
-              sx={{
-                p: 0,
-                color: "white",
-                fontSize: "1rem",
-                display: "inline-flex",
-                alignItems: "center",
-                cursor: "pointer",
-              }}
-            >
-              Harshita Gupta
-              <ArrowDropDownIcon style={{ marginTop: "2px" }} />
-            </Box>
-          </Tooltip>
-          <Menu
-            sx={{ mt: "45px" }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
+        <Tooltip title="View Options" arrow>
+          <Box
+            onClick={handleOpenUserMenu}
+            sx={{
+              p: 0,
+              color: "white",
+              fontSize: "1rem",
+              display: "inline-flex",
+              alignItems: "center",
+              cursor: "pointer",
             }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
           >
-            <MenuItem onClick={handleCloseUserMenu}>
-              <Typography textAlign="center">My Profile</Typography>
-            </MenuItem>
-            <MenuItem onClick={handleCloseUserMenu}>
-              <Typography textAlign="center">Logout</Typography>
-            </MenuItem>
-          </Menu>
-        </Box>
-      </AppBar>
+            Harshita Gupta
+            <ArrowDropDownIcon style={{ marginTop: "2px" }} />
+          </Box>
+        </Tooltip>
+        <Menu
+          sx={{ mt: "45px" }}
+          id="menu-appbar"
+          anchorEl={anchorElUser}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          open={Boolean(anchorElUser)}
+          onClose={handleCloseUserMenu}
+        >
+          <MenuItem onClick={handleCloseUserMenu}>
+            <Typography textAlign="center">My Profile</Typography>
+          </MenuItem>
+          <MenuItem onClick={handleCloseUserMenu}>
+            <Typography textAlign="center">Logout</Typography>
+          </MenuItem>
+        </Menu>
+      </Box>
     </Box>
   );
 };
